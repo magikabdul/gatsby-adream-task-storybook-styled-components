@@ -1,5 +1,7 @@
-import React from 'react';
-import { createGlobalStyle } from "styled-components";
+import React from "react"
+import { ThemeProvider } from "styled-components"
+import { createGlobalStyle } from "styled-components"
+import theme from "src/theme/theme"
 
 const GlobalStyles = createGlobalStyle`
   *, *::before, *::after {
@@ -11,13 +13,15 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     font-family: 'Poppins', sans-serif;
   }
-`;
+`
 
 const Layout = ({ children }) => (
   <>
     <GlobalStyles />
-    {children}
+    <ThemeProvider theme={theme}>
+      {children}
+    </ThemeProvider>
   </>
 )
 
-export default Layout;
+export default Layout
