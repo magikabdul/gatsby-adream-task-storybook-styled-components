@@ -13,7 +13,11 @@ const MainPage = ({ children }) => (
   <>
     <Layout>
       {children}
-      <div>hello</div>
+      <h1>header h1</h1>
+      <h2>header h2</h2>
+      <h3>header h3</h3>
+      <h4>header h4</h4>
+      <p>hello</p>
       <Test/>
     </Layout>
   </>
