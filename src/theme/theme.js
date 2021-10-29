@@ -3,7 +3,8 @@ const theme = {
     white: '#fff',
     black: '#000',
     yellow: '#FFCC48',
-    almostBlack: '#040506'
+    almostBlack: '#040506',
+    input: '#727272'
   },
 
   font: {
