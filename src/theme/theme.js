@@ -4,7 +4,8 @@ const theme = {
     black: '#000',
     yellow: '#FFCC48',
     almostBlack: '#040506',
-    input: '#727272'
+    input: '#727272',
+    inputCheck: '#161615',
   },
 
   font: {
