@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Input = styled.input`
-  padding: 15px 20px;
+  padding: 12px 19px 11px;
   border: ${({ theme }) => `1px solid ${theme.color.black}`};
 
   color: ${({ theme }) => theme.color.input};
   font-size: ${({ theme }) => theme.font.size.s};
+  font-family: 'Poppins', sans-serif;
 
   width: 100%;
 `;
