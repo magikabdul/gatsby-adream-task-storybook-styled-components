@@ -52,6 +52,8 @@ const LabelBox = styled.div`
 `;
 
 const Label = styled.span`
+  margin-left: 7px;
+  font-family: 'Poppins', sans-serif;
   font-size: ${({ theme }) => theme.font.size.s};
   font-weight: bold;
   letter-spacing: 3.6px;
