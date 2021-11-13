@@ -53,6 +53,8 @@ const icons = [
 ];
 
 const Container = styled.div`
+  position: absolute;
+  top: 0;
   padding-top: 42px;
   margin: 0 175px;
 
@@ -66,14 +68,14 @@ const Logo = styled.div`
 `;
 
 const Navigation = styled.ul`
-  margin: 25px 0 0 185px;
+  margin: 25px 0 0 184px;
   flex: 1;
   display: flex;
   list-style: none;
 `;
 
 const SocialIcons = styled.div`
-  margin-top: 22px;
+  margin: 22px 0 0 400px;
   display: flex;
 `;
 
