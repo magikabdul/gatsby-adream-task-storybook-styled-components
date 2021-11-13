@@ -11,13 +11,14 @@ const Container = styled.div`
 const Number = styled.div`
   font-size: ${({ theme }) => theme.font.size.s};
   font-weight: bold;
+  width: 24px;
   
   color: ${({ theme }) => theme.color.white};
 `
 
 const Bar = styled.div`
   position: relative;
-  margin: 0 18px;
+  margin: 0 17px;
   width: 209px;
   height: 6px;
   
@@ -35,11 +36,11 @@ const Bar = styled.div`
 
 const getNumber = (x) => x < 10 ? `0${x}` : `${x}`;
 
-const Pagination = ({currentSlide, totalSlides}) => (
+const Pagination = ({currentValue, maxValue}) => (
   <Container>
-    <Number>{getNumber(currentSlide)}</Number>
-    <Bar currentSlide={currentSlide} totalSlides={totalSlides} />
-    <Number>{getNumber(totalSlides)}</Number>
+    <Number>{getNumber(currentValue)}</Number>
+    <Bar currentSlide={currentValue} totalSlides={maxValue} />
+    <Number>{getNumber(maxValue)}</Number>
   </Container>
 )
 

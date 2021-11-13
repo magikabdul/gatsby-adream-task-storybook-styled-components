@@ -7,6 +7,8 @@ const Box = styled.p`
   font-weight: ${({ fontWeight }) => fontWeight};
   color: ${({ color, theme }) =>
     color === 'primary' ? `${theme.color.black}` : `${theme.color.white}`};
+  white-space: pre-wrap;
+  line-height: 72px;
 `;
 
 const Typography = ({ fontSize, fontWeight, text, variant, color }) => (

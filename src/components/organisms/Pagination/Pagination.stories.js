@@ -15,7 +15,7 @@ export default {
 const Template = (args) => (
   <ThemeProvider theme={theme}>
     <GlobalStyles />
-    <div style={{ backgroundColor: '#d8d8d8' }}>
+    <div style={{ backgroundColor: '#d8d8d8', position: 'relative' }}>
       <Pagination {...args} />
     </div>
   </ThemeProvider>
