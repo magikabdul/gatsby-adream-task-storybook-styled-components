@@ -17,9 +17,9 @@ pipeline {
         
         stage('deploy') {
             steps {
-                sh 'sudo scp -P 5000 -i /home/kris/.ssh/wordic /var/lib/jenkins/workspace/gatsby-adream-storybook/public/*.* kris@wordic.it:/home/kris/jenkins_uploads/gatsby'
-                sh 'sudo ssh -p 5000 -i /home/kris/.ssh/wordic kris@wordic.it "sudo cp /home/kris/jenkins_uploads/gatsby/*.* /home/kris/frontend/gatsby"'
-                sh 'sudo ssh -p 5000 -i /home/kris/.ssh/wordic kris@wordic.it "sudo rm /home/kris/jenkins_uploads/gatsby/*.*"'
+                sh 'sudo scp -r -P 5000 -i /home/kris/.ssh/wordic /var/lib/jenkins/workspace/gatsby-adream-storybook/public/ kris@wordic.it:/home/kris/jenkins_uploads/gatsby'
+                sh 'sudo ssh -p 5000 -i /home/kris/.ssh/wordic kris@wordic.it "sudo cp -r /home/kris/jenkins_uploads/gatsby/. /home/kris/frontend/gatsby"'
+                sh 'sudo ssh -p 5000 -i /home/kris/.ssh/wordic kris@wordic.it "sudo rm -r /home/kris/jenkins_uploads/gatsby/"'
             }
         }
     }
