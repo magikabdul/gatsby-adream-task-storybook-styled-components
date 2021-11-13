@@ -9,7 +9,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    margin: 0;
+    width: 1920px;
+    margin: 0 auto;
     padding: 0;
     font-family: 'Poppins', sans-serif;
   }
