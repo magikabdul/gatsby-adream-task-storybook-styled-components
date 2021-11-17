@@ -13,6 +13,13 @@ module.exports = {
           include: /svg/ // See below to configure properly
         }
       }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `notes`,
+        path: `${__dirname}/src/assets/images/`,
+      },
     }
   ],
 }
