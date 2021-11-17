@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 300px;
+  width: 100%;
   height: 310px;
   background-color: ${({ theme }) => theme.color.white};
 
@@ -17,7 +17,7 @@ const IconBox = styled.div`
 `;
 
 const Label = styled.div`
-  margin-top: ${({ variant }) => (variant === 'high' ? '45px' : '30px')};
+  margin-top: ${({ variant }) => (variant === 'high' ? '45px' : '36px')};
   font-size: ${({ theme }) => theme.font.size.m};
   line-height: 38px;
   white-space: pre-wrap;
