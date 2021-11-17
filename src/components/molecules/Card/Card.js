@@ -2,24 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import NavigationButton from '../../atoms/NavigationButton/NavigationButton'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 const Container = styled.div`
   position: relative;
   width: 770px;
-  height: ${({ variant }) => variant === 'big' ? `495px` : `362px`};
+  height: ${({ variant }) => (variant === 'big' ? `495px` : `362px`)};
 
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: ${({ image }) => `url(${image})`};
-    background-position: center;
-    filter: brightness(75%);
-    background-size: 100%;
-    transition: all 0.3s ease-in-out;
+  & > div img {
+    transition: transform 0.3s ease-in-out !important;
+  }
+
+  &:hover > div img {
+    transform: scale(1.2);
   }
 
   &:hover > div:last-child {
@@ -31,11 +26,6 @@ const Container = styled.div`
       color: ${({ theme }) => theme.color.white};
     }
   }
-}
-
-&:hover:after {
-  transition: all 0.3s ease-in-out;
-  background-size: 120%;
 }
 `
 
@@ -68,6 +58,7 @@ const Title = styled.h3`
   margin: -35px 0 0 10px;
   color: inherit;
   white-space: pre-wrap;
+  line-height: 38px;
 `
 
 const Divider = styled.div`
@@ -94,7 +85,8 @@ const ButtonBox = styled.div`
 `
 
 const Card = ({ variant, title, info, image, onClick }) => (
-  <Container image={image} variant={variant} onClick={onClick}>
+  <Container variant={variant} onClick={onClick}>
+    <GatsbyImage image={image} alt='office image' />
     <DescriptionBox variant={variant}>
       <TextBox>
         <YellowSquare />
