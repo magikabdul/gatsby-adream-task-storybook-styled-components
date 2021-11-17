@@ -13,6 +13,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
   }
   
   h1 {
