@@ -14,6 +14,10 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
+    
+    & ::-webkit-scrollbar {
+      display: none;
+    }
   }
   
   h1 {
