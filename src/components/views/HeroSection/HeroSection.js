@@ -106,7 +106,7 @@ const HeroSection = () => {
   };
 
   return (
-    <Section>
+    <Section name='hero-section'>
       <Slider>
         <ImageBox imageNumber={imageNumber}>
           <StaticImage

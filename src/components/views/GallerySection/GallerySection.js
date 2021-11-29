@@ -100,7 +100,7 @@ const ImageBox = styled.div`
 const GallerySection = () => {
   const [galleryShift, setGalleryShift] = useState(false);
   return (
-    <Container>
+    <Container name='gallery-section'>
       <ButtonLeft onClick={() => setGalleryShift(false)}>
         <NavigationButton direction='left' />
       </ButtonLeft>

@@ -1,17 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import { StaticImage } from 'gatsby-plugin-image';
+import { Link } from 'react-scroll';
 
 const linksColumnOne = [
-  { name: 'Strona główna' },
-  { name: 'Poznaj przestrzeń' },
-  { name: 'Oferta' },
+  { name: 'Strona główna', to: 'hero-section' },
+  { name: 'Poznaj przestrzeń', to: 'location-section' },
+  { name: 'Oferta', to: 'offer-section' },
 ];
 
 const linksColumnTwo = [
-  { name: 'Lokalizacja' },
-  { name: 'Własne biuro' },
-  { name: 'Kontakt' },
+  { name: 'Lokalizacja', to: 'gallery-section' },
+  { name: 'Własne biuro', to: 'own-office-section' },
+  { name: 'Kontakt', to: 'footer-section' },
 ];
 
 const Container = styled.div`
@@ -81,7 +82,7 @@ const FourthColumn = styled.div`
 `;
 
 const FooterSection = () => (
-  <Container>
+  <Container name='footer-section'>
     <FirstColumn>
       <p>LOGO</p>
       <p>
@@ -98,12 +99,16 @@ const FooterSection = () => (
     <div />
     <LinksColumn>
       {linksColumnOne.map((link, i) => (
-        <p key={i}>{link.name}</p>
+        <Link key={i} to={link.to} smooth={true} duration={1000}>
+          <p>{link.name}</p>
+        </Link>
       ))}
     </LinksColumn>
     <LinksColumn>
       {linksColumnTwo.map((link, i) => (
-        <p key={i}>{link.name}</p>
+        <Link key={i} to={link.to} smooth={true} duration={1000}>
+          <p>{link.name}</p>
+        </Link>
       ))}
     </LinksColumn>
     <FourthColumn>

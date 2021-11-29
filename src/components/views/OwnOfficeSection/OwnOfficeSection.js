@@ -41,7 +41,7 @@ const ImageBox = styled.div`
 `;
 
 const OwnOfficeSection = () => (
-  <Container>
+  <Container name='own-office-section'>
     <Title>
       Lorem ipsum
       <br />
