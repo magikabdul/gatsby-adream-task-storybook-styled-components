@@ -22,7 +22,7 @@ const OfferSection = () => {
   const nodes = data.allFile.nodes;
   console.log({ nodes });
   return (
-    <Container>
+    <Container name='offer-section'>
       {nodes.map((node, i) => (
         <Card
           key={i}

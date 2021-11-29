@@ -1,27 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
 import MenuButton from '../../atoms/MenuButton/MenuButton';
+import { Link } from 'react-scroll';
 
 const buttons = [
   {
     label: 'Poznaj przestrzeń',
     left: '0',
+    to: 'location-section',
   },
   {
     label: 'Oferta',
     left: '63px',
+    to: 'offer-section',
   },
   {
     label: 'Lokalizacja',
     left: '65px',
+    to: 'gallery-section',
   },
   {
     label: 'Własne biuro',
     left: '110px',
+    to: 'own-office-section',
   },
   {
     label: 'Kontakt',
     left: '110px',
+    to: 'footer-section',
   },
 ];
 
@@ -95,8 +101,13 @@ const Navbar = () => (
     <Logo>LOGO</Logo>
     <Navigation>
       {buttons.map(b => (
-        <li key={b.label} style={{ marginLeft: `${b.left}` }}>
-          <MenuButton label={b.label} />
+        <li
+          key={b.label}
+          style={{ marginLeft: `${b.left}`, border: 'none !important' }}
+        >
+          <Link to={b.to} smooth={true} duration={1000}>
+            <MenuButton label={b.label} />
+          </Link>
         </li>
       ))}
     </Navigation>

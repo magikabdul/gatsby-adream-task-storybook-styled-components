@@ -90,7 +90,7 @@ const ButtonBox = styled.div`
 
 const LocationSection = () => {
   return (
-    <Container>
+    <Container name='location-section'>
       <TitleBox>
         <Title>
           Lorem

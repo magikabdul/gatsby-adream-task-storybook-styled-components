@@ -2,18 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Container = styled.a`
+const Container = styled.div`
   display: inline-block;
   cursor: pointer;
 
   &:hover > div {
-    &:after, &:before {
+    &:after,
+    &:before {
       width: 50%;
     }
   }
 `;
 
-const Button = styled.button`
+const Button = styled.div`
   border: none;
   color: ${({ theme }) => theme.color.white};
   background-color: transparent;
@@ -29,7 +30,7 @@ const Underline = styled.div`
   height: 1px;
   display: block;
   margin-top: 12px;
-  
+
   &:before,
   &:after {
     position: absolute;
@@ -49,9 +50,9 @@ const Underline = styled.div`
   }
 `;
 
-const MenuButton = ({ label, href }) => {
+const MenuButton = ({ label }) => {
   return (
-    <Container href={href}>
+    <Container>
       <Button>{label}</Button>
       <Underline />
     </Container>
@@ -60,11 +61,6 @@ const MenuButton = ({ label, href }) => {
 
 MenuButton.propTypes = {
   label: PropTypes.string.isRequired,
-  href: PropTypes.string,
 };
-
-MenuButton.defaultProps = {
-  href: null,
-}
 
 export default MenuButton;
