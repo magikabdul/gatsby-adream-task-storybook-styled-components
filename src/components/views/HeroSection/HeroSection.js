@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Navbar from 'src/components/molecules/Navbar/Navbar';
 import ContactForm from 'src/components/organisms/ContactForm/ContactForm';
 import NavigationButton from 'src/components/atoms/NavigationButton/NavigationButton';
 import Pagination from 'src/components/organisms/Pagination/Pagination';
@@ -11,6 +10,11 @@ const sliderTime = 5;
 const Section = styled.section`
   height: 941px;
   position: relative;
+
+  @media only screen and (max-width: 500px) {
+    height: unset;
+    position: unset;
+  }
 `;
 
 const Slider = styled.div`
@@ -18,6 +22,10 @@ const Slider = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
+
+  @media only screen and (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const ImageBox = styled.div`
@@ -28,6 +36,10 @@ const ImageBox = styled.div`
   display: flex;
   transform: ${({ imageNumber }) => `translateX(${-1920 * imageNumber}px)`};
   transition: transform 0.5s ease-in-out;
+
+  @media only screen and (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const ContactFormBox = styled.div`
@@ -41,6 +53,10 @@ const DescriptionBox = styled.div`
   top: 515px;
   left: 175px;
   color: ${({ theme }) => theme.color.white};
+
+  @media only screen and (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const Title = styled.div`
@@ -61,16 +77,28 @@ const ControlBox = styled.div`
   width: 100%;
 
   display: flex;
+
+  @media only screen and (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const NaviLeft = styled.div`
   width: 160px;
   height: 100%;
+
+  @media only screen and (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const NaviRight = styled.div`
   width: 145px;
   height: 100%;
+
+  @media only screen and (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const PaginationBox = styled.div`
@@ -78,6 +106,10 @@ const PaginationBox = styled.div`
   display: flex;
   align-items: center;
   margin-left: 30px;
+
+  @media only screen and (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const HeroSection = () => {
@@ -126,7 +158,6 @@ const HeroSection = () => {
           />
         </ImageBox>
       </Slider>
-      <Navbar />
       <ContactFormBox>
         <ContactForm />
       </ContactFormBox>

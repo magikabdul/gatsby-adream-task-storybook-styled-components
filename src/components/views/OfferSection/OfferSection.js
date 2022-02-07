@@ -20,7 +20,6 @@ const Container = styled.div`
 const OfferSection = () => {
   const data = useStaticQuery(query);
   const nodes = data.allFile.nodes;
-  console.log({ nodes });
   return (
     <Container name='offer-section'>
       {nodes.map((node, i) => (

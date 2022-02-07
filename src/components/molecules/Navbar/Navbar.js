@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import MenuButton from '../../atoms/MenuButton/MenuButton';
 import { Link } from 'react-scroll';
@@ -63,14 +63,23 @@ const Container = styled.div`
   top: 0;
   padding-top: 42px;
   margin: 0 175px;
-
+  z-index: 10;
   display: flex;
   color: ${({ theme }) => theme.color.white};
+
+  @media only screen and (max-width: 500px) {
+    display: none;
+    position: unset;
+  }
 `;
 
 const Logo = styled.div`
   font-size: ${({ theme }) => theme.font.size.l};
   font-weight: bold;
+
+  @media only screen and (max-width: 500px) {
+    font-size: ${({ theme }) => theme.font.size.m};
+  }
 `;
 
 const Navigation = styled.ul`
@@ -96,29 +105,150 @@ const IconBox = styled.div`
   background-color: ${({ theme }) => theme.color.white};
 `;
 
-const Navbar = () => (
-  <Container>
-    <Logo>LOGO</Logo>
-    <Navigation>
-      {buttons.map(b => (
-        <li
-          key={b.label}
-          style={{ marginLeft: `${b.left}`, border: 'none !important' }}
+const ContainerMobile = styled.div`
+  display: none;
+
+  height: 80px;
+  width: 100%;
+  padding: 0 16px;
+  color: ${({ theme }) => theme.color.white};
+  z-index: 10;
+
+  @media only screen and (max-width: 500px) {
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: black;
+    box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+  }
+`;
+
+const BurgerButton = styled.button`
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  outline: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: pointer;
+  transform-origin: right;
+
+  & span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: ${({ theme }) => theme.color.white};
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  & span:first-child {
+    transform: ${({ showMenu }) =>
+      showMenu && `rotate(45deg) translateX(7px) translateY(7px)`};
+  }
+
+  & span:nth-child(2) {
+    display: ${({ showMenu }) => showMenu && 'none'};
+  }
+
+  & span:last-child {
+    transform: ${({ showMenu }) =>
+      showMenu && `rotate(-45deg) translateX(7px) translateY(-7px)`};
+  }
+`;
+
+const MobileMenu = styled.div`
+  display: none;
+  position: fixed;
+  top: 80px;
+  transition: all 0.3s ease-in-out;
+  transform: ${({ showMenu }) =>
+    showMenu ? `translateX(0)` : 'translateX(100vw)'};
+  background-color: ${({ theme }) => theme.color.black};
+  color: ${({ theme }) => theme.color.white};
+  z-index: 10;
+
+  & ul {
+    list-style: none;
+    width: 100%;
+  }
+
+  & button {
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: ${({ theme }) => theme.color.inputCheck};
+    color: inherit;
+    padding: 16px;
+    margin: 16px 0;
+    cursor: pointer;
+    font-size: ${({ theme }) => theme.font.size.m};
+    text-transform: uppercase;
+    text-align: right;
+  }
+
+  @media only screen and (max-width: 500px) {
+    display: flex;
+    width: 100%;
+  }
+`;
+
+const Navbar = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
+  return (
+    <>
+      <Container>
+        <Logo>LOGO</Logo>
+        <Navigation>
+          {buttons.map(b => (
+            <li
+              key={b.label}
+              style={{ marginLeft: `${b.left}`, border: 'none !important' }}
+            >
+              <Link to={b.to} smooth={true} duration={1000}>
+                <MenuButton label={b.label} />
+              </Link>
+            </li>
+          ))}
+        </Navigation>
+        <SocialIcons>
+          {icons.map(icon => (
+            <IconBox key={icon.id} style={{ marginLeft: `${icon.left}` }}>
+              {icon.icon}
+            </IconBox>
+          ))}
+        </SocialIcons>
+      </Container>
+      <ContainerMobile>
+        <Logo style={{ flexGrow: 1 }}>LOGO</Logo>
+        <BurgerButton
+          showMenu={showMenu}
+          onClick={() => setShowMenu(!showMenu)}
         >
-          <Link to={b.to} smooth={true} duration={1000}>
-            <MenuButton label={b.label} />
-          </Link>
-        </li>
-      ))}
-    </Navigation>
-    <SocialIcons>
-      {icons.map(icon => (
-        <IconBox key={icon.id} style={{ marginLeft: `${icon.left}` }}>
-          {icon.icon}
-        </IconBox>
-      ))}
-    </SocialIcons>
-  </Container>
-);
+          <span />
+          <span />
+          <span />
+        </BurgerButton>
+      </ContainerMobile>
+      <MobileMenu showMenu={showMenu}>
+        <ul>
+          {buttons.map(btn => (
+            <li key={btn.label}>
+              <Link to={btn.to} smooth duration={1000}>
+                <button onClick={() => setShowMenu(false)}>{btn.label}</button>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </MobileMenu>
+    </>
+  );
+};
 
 export default Navbar;

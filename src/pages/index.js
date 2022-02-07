@@ -8,9 +8,23 @@ import OwnOfficeSection from 'src/components/views/OwnOfficeSection/OwnOfficeSec
 import NewsSection from 'src/components/views/NewsSection/NewsSection';
 import GallerySection from 'src/components/views/GallerySection/GallerySection';
 import FooterSection from 'src/components/views/FooterSection/FooterSection';
+import Navbar from 'src/components/molecules/Navbar/Navbar';
+import styled from 'styled-components';
+import ContactForm from 'src/components/organisms/ContactForm/ContactForm';
+
+const ContactFormBox = styled.div`
+  display: none;
+
+  @media only screen and (max-width: 500px) {
+  }
+`;
 
 const MainPage = () => (
   <Layout>
+    <Navbar />
+    <ContactFormBox>
+      <ContactForm />
+    </ContactFormBox>
     <HeroSection />
     <OfferSection />
     <LocationSection />
