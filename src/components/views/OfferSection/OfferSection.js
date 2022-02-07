@@ -15,6 +15,11 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 28px;
+
+  @media only screen and (max-width: 500px) {
+    margin: 16px auto;
+    grid-template-columns: 1fr;
+  }
 `;
 
 const OfferSection = () => {
@@ -44,7 +49,7 @@ const query = graphql`
       totalCount
       nodes {
         childrenImageSharp {
-          gatsbyImageData(layout: FIXED, placeholder: BLURRED)
+          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
     }

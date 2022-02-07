@@ -10,6 +10,7 @@ const theme = {
 
   font: {
     size: {
+      xs: '14px',
       s: '18px',
       m: '28px',
       l: '48px',
