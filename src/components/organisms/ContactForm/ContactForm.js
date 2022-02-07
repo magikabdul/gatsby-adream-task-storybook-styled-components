@@ -6,7 +6,7 @@ import Button from '../../atoms/Button/Button'
 
 const Container = styled.div`
   width: 449px;
-  height: 638px;
+  min-height: 638px;
 
   padding: 28px 33px 33px;
 
