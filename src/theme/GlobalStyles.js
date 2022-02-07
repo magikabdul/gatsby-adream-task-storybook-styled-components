@@ -9,15 +9,9 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    width: 1920px;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
-    
-    & ::-webkit-scrollbar {
-      display: none;
-    }
   }
   
   h1 {
