@@ -37,7 +37,7 @@ const Stamp = ({ icon, label, variant }) => (
 );
 
 Stamp.propTypes = {
-  icon: PropTypes.element.isRequired,
+  icon: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   variant: PropTypes.oneOf(['high', 'short']),
 };
