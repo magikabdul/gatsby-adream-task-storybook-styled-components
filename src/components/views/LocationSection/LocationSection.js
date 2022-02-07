@@ -55,54 +55,96 @@ const stamps = [
   },
 ];
 
-const Container = styled.div`
+const SectionLocationWrapper = styled.section`
   margin: 140px 175px 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  
+  @media only screen and (max-width: 500px) {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 24px 0 0;
+    gap: 10px;
+    
+    & div:first-child {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    & div:nth-child(8) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+    & div:last-child {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
 `;
 
 const TitleBox = styled.div`
   margin-top: 5px;
+
+  @media only screen and (max-width: 500px) {
+    margin: 0;
+    text-align: center;
+  }
 `;
 
 const Title = styled.div`
   font-size: ${({ theme }) => theme.font.size.l};
+  width: 250px;
   font-weight: bold;
   white-space: pre-wrap;
   line-height: 58px;
+
+  @media only screen and (max-width: 500px) {
+    font-size: ${({ theme }) => theme.font.size.m};
+    width: 70%;
+    white-space: unset;
+    line-height: unset;
+    margin: 24px auto 0;
+  }
 `;
 
 const Line = styled.div`
   border: ${({ theme }) => `5px solid ${theme.color.black}`};
   width: 130px;
   margin-top: 48px;
+
+  @media only screen and (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const StampBox = styled.div`
-  padding: ${({ padding }) => padding};
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (min-width: 1920px) {
+    display: block;
+    padding: ${({ padding }) => padding};
+  }
 `;
 
 const ButtonBox = styled.div`
-  margin-top: 96px;
-  width: 380px;
-  height: 78px;
+  width: 60%;
+  margin: 24px auto 0;
+
+  @media only screen and (min-width: 1920px) {
+    margin: 96px 0 0 0;
+    width: 380px;
+    height: 78px;
+  }
 `;
 
 const LocationSection = () => {
   return (
-    <Container name='location-section'>
+    <SectionLocationWrapper name='location-section'>
       <TitleBox>
-        <Title>
-          Lorem
-          <br />
-          ipsum
-          <br />
-          dolor sit
-          <br />
-          amet,
-          <br />
-          conse
-        </Title>
+        <Title>Lorem ipsum dolor sit amet, conse</Title>
         <Line />
       </TitleBox>
       {stamps.map((stamp, i) => (
@@ -127,7 +169,7 @@ const LocationSection = () => {
           }
         />
       </ButtonBox>
-    </Container>
+    </SectionLocationWrapper>
   );
 };
 
