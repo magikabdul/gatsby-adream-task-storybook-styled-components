@@ -107,7 +107,7 @@ const IconBox = styled.div`
 
 const ContainerMobile = styled.div`
   display: none;
-  
+
   height: 80px;
   width: 100%;
   padding: 0 16px;
@@ -120,7 +120,7 @@ const ContainerMobile = styled.div`
     top: 0;
     justify-content: flex-start;
     align-items: center;
-    
+
     background-color: black;
     box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
   }
@@ -137,7 +137,7 @@ const BurgerButton = styled.button`
   justify-content: space-around;
   cursor: pointer;
   transform-origin: right;
-  
+
   & span {
     display: block;
     width: 100%;
@@ -146,9 +146,10 @@ const BurgerButton = styled.button`
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
   }
-  
+
   & span:first-child {
-    transform: ${({ showMenu }) => showMenu && `rotate(45deg) translateX(7px) translateY(7px)`};
+    transform: ${({ showMenu }) =>
+      showMenu && `rotate(45deg) translateX(7px) translateY(7px)`};
   }
 
   & span:nth-child(2) {
@@ -156,12 +157,45 @@ const BurgerButton = styled.button`
   }
 
   & span:last-child {
-    transform: ${({ showMenu }) => showMenu && `rotate(-45deg) translateX(7px) translateY(-7px)`};
+    transform: ${({ showMenu }) =>
+      showMenu && `rotate(-45deg) translateX(7px) translateY(-7px)`};
   }
 `;
 
 const MobileMenu = styled.div`
-  height: 100vh;
+  display: none;
+  position: fixed;
+  top: 80px;
+  transition: all 0.3s ease-in-out;
+  transform: ${({ showMenu }) =>
+    showMenu ? `translateX(0)` : 'translateX(100vw)'};
+  background-color: ${({ theme }) => theme.color.black};
+  color: ${({ theme }) => theme.color.white};
+  z-index: 10;
+
+  & ul {
+    list-style: none;
+    width: 100%;
+  }
+
+  & button {
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: ${({ theme }) => theme.color.inputCheck};
+    color: inherit;
+    padding: 16px;
+    margin: 16px 0;
+    cursor: pointer;
+    font-size: ${({ theme }) => theme.font.size.m};
+    text-transform: uppercase;
+    text-align: right;
+  }
+
+  @media only screen and (max-width: 500px) {
+    display: flex;
+    width: 100%;
+  }
 `;
 
 const Navbar = () => {
@@ -193,15 +227,26 @@ const Navbar = () => {
       </Container>
       <ContainerMobile>
         <Logo style={{ flexGrow: 1 }}>LOGO</Logo>
-        <BurgerButton showMenu={showMenu} onClick={() => setShowMenu(!showMenu)}>
+        <BurgerButton
+          showMenu={showMenu}
+          onClick={() => setShowMenu(!showMenu)}
+        >
           <span />
           <span />
           <span />
         </BurgerButton>
-        {showMenu && <MobileMenu>
-
-        </MobileMenu>}
       </ContainerMobile>
+      <MobileMenu showMenu={showMenu}>
+        <ul>
+          {buttons.map(btn => (
+            <li key={btn.label}>
+              <Link to={btn.to} smooth duration={1000}>
+                <button onClick={() => setShowMenu(false)}>{btn.label}</button>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </MobileMenu>
     </>
   );
 };
