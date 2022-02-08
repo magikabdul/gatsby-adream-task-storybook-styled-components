@@ -58,51 +58,55 @@ const icons = [
   },
 ];
 
-const Container = styled.div`
-  position: absolute;
-  top: 0;
-  padding-top: 42px;
-  margin: 0 175px;
-  z-index: 10;
-  display: flex;
-  color: ${({ theme }) => theme.color.white};
+const ContainerDesktop = styled.div`
+  display: none;
 
-  @media only screen and (max-width: 500px) {
-    display: none;
-    position: unset;
+  @media only screen and (min-width: 1920px) {
+    position: absolute;
+    top: 0;
+    padding-top: 42px;
+    margin: 0 175px;
+    z-index: 10;
+    display: flex;
+    color: ${({ theme }) => theme.color.white};
   }
 `;
 
 const Logo = styled.div`
-  font-size: ${({ theme }) => theme.font.size.l};
+  font-size: ${({ theme }) => theme.font.size.m};
   font-weight: bold;
 
-  @media only screen and (max-width: 500px) {
-    font-size: ${({ theme }) => theme.font.size.m};
+  @media only screen and (min-width: 1920px) {
+    font-size: ${({ theme }) => theme.font.size.l};
   }
 `;
 
 const Navigation = styled.ul`
-  margin: 25px 0 0 184px;
-  flex: 1;
-  display: flex;
-  list-style: none;
+  @media only screen and (min-width: 1920px) {
+    margin: 25px 0 0 184px;
+    flex: 1;
+    display: flex;
+    list-style: none;
+  }
 `;
 
 const SocialIcons = styled.div`
-  margin: 22px 0 0 400px;
-  display: flex;
+  @media only screen and (min-width: 1920px) {
+    margin: 22px 0 0 400px;
+    display: flex;
+  }
 `;
 
 const IconBox = styled.div`
-  padding: 5px;
-
-  display: flex;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  color: ${({ theme }) => theme.color.black};
-  background-color: ${({ theme }) => theme.color.white};
+  @media only screen and (min-width: 1920px) {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    color: ${({ theme }) => theme.color.black};
+    background-color: ${({ theme }) => theme.color.white};
+  }
 `;
 
 const ContainerMobile = styled.div`
@@ -203,7 +207,7 @@ const Navbar = () => {
 
   return (
     <>
-      <Container>
+      <ContainerDesktop>
         <Logo>LOGO</Logo>
         <Navigation>
           {buttons.map(b => (
@@ -224,7 +228,8 @@ const Navbar = () => {
             </IconBox>
           ))}
         </SocialIcons>
-      </Container>
+      </ContainerDesktop>
+
       <ContainerMobile>
         <Logo style={{ flexGrow: 1 }}>LOGO</Logo>
         <BurgerButton
@@ -240,7 +245,7 @@ const Navbar = () => {
         <ul>
           {buttons.map(btn => (
             <li key={btn.label}>
-              <Link to={btn.to} smooth duration={1000}>
+              <Link to={btn.to} smooth duration={1000} offset={-100}>
                 <button onClick={() => setShowMenu(false)}>{btn.label}</button>
               </Link>
             </li>

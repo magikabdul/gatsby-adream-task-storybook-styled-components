@@ -53,7 +53,7 @@ const news = [
 
 const SectionNewsWrapper = styled.section`
   margin: 48px auto 0;
-  
+
   @media only screen and (min-width: 1920px) {
     margin-top: 991px;
   }

@@ -5,10 +5,17 @@ import NavigationButton from 'src/components/atoms/NavigationButton/NavigationBu
 import Pagination from 'src/components/organisms/Pagination/Pagination';
 import { StaticImage } from 'gatsby-plugin-image';
 import {
-  BoxDesktopLarge, BoxPhone,
-  ContactFormBoxDesktopLarge, ContactFormBoxPhone, ControlBoxDesktopLarge,
-  DescriptionBoxDesktopLarge, DescriptionBoxPhone,
-  ImageBoxDesktopLarge, NaviLeftDesktopLarge, NaviRightDesktopLarge, PaginationBoxDesktopLarge,
+  BoxDesktopLarge,
+  BoxPhone,
+  ContactFormBoxDesktopLarge,
+  ContactFormBoxPhone,
+  ControlBoxDesktopLarge,
+  DescriptionBoxDesktopLarge,
+  DescriptionBoxPhone,
+  ImageBoxDesktopLarge,
+  NaviLeftDesktopLarge,
+  NaviRightDesktopLarge,
+  PaginationBoxDesktopLarge,
   SliderDesktopLarge,
 } from 'src/components/views/HeroSection/hero-section-styling';
 
@@ -53,25 +60,25 @@ const ContainerDesktopLarge = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: ${({ theme }) => theme.font.size.xl};
-  font-weight: bold;
-  line-height: 98px;
-  
-  @media only screen and (max-width: 500px) {
-    font-size: ${({ theme }) => theme.font.size.m};
-    line-height: unset;
-    text-align: center;
+  font-size: ${({ theme }) => theme.font.size.m};
+  text-align: center;
+
+  @media only screen and (min-width: 1920px) {
+    font-size: ${({ theme }) => theme.font.size.xl};
+    text-align: left;
+    font-weight: bold;
+    line-height: 98px;
   }
 `;
 const Message = styled.div`
-  margin-top: 5px;
-  font-size: ${({ theme }) => theme.font.size.l};
-  line-height: 72px;
-  
-  @media only screen and (max-width: 500px) {
-    font-size: ${({ theme }) => theme.font.size.s};
-    line-height: unset;
-    text-align: center;
+  font-size: ${({ theme }) => theme.font.size.s};
+  text-align: center;
+
+  @media only screen and (min-width: 1920px) {
+    font-size: ${({ theme }) => theme.font.size.l};
+    text-align: left;
+    margin-top: 5px;
+    line-height: 72px;
   }
 `;
 

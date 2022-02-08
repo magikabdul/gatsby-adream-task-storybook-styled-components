@@ -31,7 +31,6 @@ const Title = styled.h1`
 `;
 
 const Line = styled.div`
-
   @media only screen and (min-width: 1920px) {
     position: absolute;
     top: 613px;
@@ -44,6 +43,7 @@ const Bars = styled.div`
   display: none;
 
   @media only screen and (min-width: 1920px) {
+    display: block;
     position: absolute;
     left: 1280px;
     width: 290px;
@@ -52,10 +52,8 @@ const Bars = styled.div`
 `;
 
 const ImageBoxPhone = styled.div`
-  display: none;
-
-  @media only screen and (max-width: 500px) {
-    display: block;
+  @media only screen and (min-width: 1920px) {
+    display: none;
   }
 `;
 

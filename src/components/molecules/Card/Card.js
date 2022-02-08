@@ -43,91 +43,82 @@ const Container = styled.div`
 
 const DescriptionBox = styled.div`
   position: absolute;
-  top: ${({ variant }) => variant === 'big' && '29px'};
-  bottom: ${({ variant }) => variant === 'small' && '29px'};
-  left: 29px;
-
-  min-width: 223px;
-  min-height: 159px;
-  background-color: ${({ theme }) => theme.color.white};
+  top: 8px;
+  left: 8px;
   color: ${({ theme }) => theme.color.black};
+  background-color: ${({ theme }) => theme.color.white};
 
-  z-index: 1;
-  
-  @media only screen and (max-width: 500px) {
-    top: 8px;
-    left: 8px;
-    bottom: unset;
-    min-width: unset;
-    min-height: unset;
+  @media only screen and (min-width: 1920px) {
+    top: ${({ variant }) => (variant === 'big' ? '29px' : 'unset')};
+    bottom: ${({ variant }) => variant === 'small' && '29px'};
+    left: 29px;
+    min-width: 223px;
+    min-height: 159px;
   }
 `;
 
 const TextBox = styled.div`
-  margin: 25px;
-  height: 100%;
+  margin: 8px;
 
-  @media only screen and (max-width: 500px) {
-    margin: 8px;
+  @media only screen and (min-width: 1920px) {
+    margin: 25px;
   }
 `;
 
 const YellowSquare = styled.div`
-  width: 42px;
-  height: 42px;
   background-color: ${({ theme }) => theme.color.yellow};
+  width: 24px;
+  height: 24px;
 
-  @media only screen and (max-width: 500px) {
-    width: 24px;
-    height: 24px;
+  @media only screen and (min-width: 1920px) {
+    width: 42px;
+    height: 42px;
   }
 `;
 
 const Title = styled.h3`
-  margin: -35px 0 0 10px;
-  color: inherit;
-  white-space: pre-wrap;
-  line-height: 38px;
+  margin: -18px 0 0 10px;
+  font-size: ${({ theme }) => theme.font.size.xs};
 
-  @media only screen and (max-width: 500px) {
-    margin: -28px 0 0 10px;
-    font-size: ${({ theme }) => theme.font.size.xs};
-    white-space: unset;
+  @media only screen and (min-width: 1920px) {
+    margin: -35px 0 0 10px;
+    font-size: ${({ theme }) => theme.font.size.m};
+    white-space: pre-wrap;
+    line-height: 38px;
   }
 `;
 
 const Divider = styled.div`
-  margin: 22px 0 0 10px;
+  margin: 0 0 0 10px;
   width: 49px;
   height: 5px;
-
   background-color: ${({ theme }) => theme.color.black};
 
-  @media only screen and (max-width: 500px) {
-    margin: -5px 0 0 10px;
+  @media only screen and (min-width: 1920px) {
+    margin: 22px 0 0 10px;
   }
 `;
 
 const Info = styled.div`
-  margin: 7px 0 0 10px;
   color: ${({ theme }) => theme.color.almostBlack};
-  font-size: ${({ theme }) => theme.font.size.s};
+  font-size: ${({ theme }) => theme.font.size.xs};
+  margin: 7px 0 0 10px;
 
-  @media only screen and (max-width: 500px) {
-    font-size: ${({ theme }) => theme.font.size.xs};
+  @media only screen and (min-width: 1920px) {
+    font-size: ${({ theme }) => theme.font.size.s};
   }
 `;
 
 const ButtonBox = styled.div`
-  position: absolute;
-  width: 130px;
-  height: 130px;
+  display: none;
 
-  bottom: 0;
-  right: 0;
-
-  @media only screen and (max-width: 500px) {
-    display: none;
+  @media only screen and (min-width: 1920px) {
+    display: block;
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    bottom: 0;
+    right: 0;
   }
 `;
 

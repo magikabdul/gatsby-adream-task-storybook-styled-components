@@ -56,63 +56,65 @@ const stamps = [
 ];
 
 const SectionLocationWrapper = styled.section`
-  margin: 140px 175px 0;
+  margin: 24px 0 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  
-  @media only screen and (max-width: 500px) {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 24px 0 0;
-    gap: 10px;
-    
-    & div:first-child {
-      grid-column-start: 1;
-      grid-column-end: 3;
-    }
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 
-    & div:nth-child(8) {
-      grid-column-start: 1;
-      grid-column-end: 3;
-    }
-    & div:last-child {
-      grid-column-start: 1;
-      grid-column-end: 3;
+  & div:first-child,
+  div:nth-child(8),
+  div:last-child {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  @media only screen and (min-width: 1920px) {
+    margin: 140px 175px 0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: unset;
+
+    & div:first-child,
+    div:nth-child(8),
+    div:last-child {
+      grid-column-start: unset;
+      grid-column-end: unset;
     }
   }
 `;
 
 const TitleBox = styled.div`
-  margin-top: 5px;
+  margin: 0;
+  text-align: center;
 
-  @media only screen and (max-width: 500px) {
-    margin: 0;
-    text-align: center;
+  @media only screen and (min-width: 1920px) {
+    margin-top: 5px;
+    text-align: left;
   }
 `;
 
 const Title = styled.div`
-  font-size: ${({ theme }) => theme.font.size.l};
-  width: 250px;
+  font-size: ${({ theme }) => theme.font.size.m};
   font-weight: bold;
-  white-space: pre-wrap;
-  line-height: 58px;
+  width: 70%;
+  margin: 24px auto 0;
 
-  @media only screen and (max-width: 500px) {
-    font-size: ${({ theme }) => theme.font.size.m};
-    width: 70%;
-    white-space: unset;
-    line-height: unset;
-    margin: 24px auto 0;
+  @media only screen and (min-width: 1920px) {
+    font-size: ${({ theme }) => theme.font.size.l};
+    width: 250px;
+    margin: unset;
+    white-space: pre-wrap;
+    line-height: 58px;
   }
 `;
 
 const Line = styled.div`
-  border: ${({ theme }) => `5px solid ${theme.color.black}`};
-  width: 130px;
-  margin-top: 48px;
+  display: none;
 
-  @media only screen and (max-width: 500px) {
-    display: none;
+  @media only screen and (min-width: 1920px) {
+    display: block;
+    border: ${({ theme }) => `5px solid ${theme.color.black}`};
+    width: 130px;
+    margin-top: 48px;
   }
 `;
 
