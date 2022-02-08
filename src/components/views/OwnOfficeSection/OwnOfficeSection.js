@@ -2,46 +2,81 @@ import React from 'react';
 import styled from 'styled-components';
 import { StaticImage } from 'gatsby-plugin-image';
 
-const Container = styled.div`
-  position: relative;
-  margin: 140px 0 0 175px;
+const SectionOwnOfficeWrapper = styled.section`
+  margin: 48px 0 0;
+
+  @media only screen and (min-width: 1920px) {
+    position: relative;
+    margin: 140px 0 0 175px;
+  }
 `;
 
 const Title = styled.h1`
-  position: absolute;
-  top: 291px;
-  white-space: pre-wrap;
-  line-height: 75px;
-  background-color: ${({ theme }) => theme.color.white};
+  margin: 24px auto 24px;
+  text-align: center;
+  font-size: ${({ theme }) => theme.font.size.m};
+  width: 70%;
+
+  @media only screen and (min-width: 1920px) {
+    font-size: ${({ theme }) => theme.font.size.xl};
+    text-align: left;
+    position: absolute;
+    top: 291px;
+    white-space: pre-wrap;
+    line-height: 75px;
+    background-color: ${({ theme }) => theme.color.white};
+    width: unset;
+    margin: unset;
+  }
 `;
 
 const Line = styled.div`
-  position: absolute;
-  top: 613px;
-  width: 610px;
-  border: ${({ theme }) => `10px solid ${theme.color.black}`};
+
+  @media only screen and (min-width: 1920px) {
+    position: absolute;
+    top: 613px;
+    width: 610px;
+    border: ${({ theme }) => `10px solid ${theme.color.black}`};
+  }
 `;
 
 const Bars = styled.div`
-  position: absolute;
-  left: 1280px;
-  width: 290px;
-  height: 145px;
+  display: none;
+
+  @media only screen and (min-width: 1920px) {
+    position: absolute;
+    left: 1280px;
+    width: 290px;
+    height: 145px;
+  }
 `;
 
-const ImageBox = styled.div`
-  position: absolute;
-  top: 72px;
-  left: 160px;
-  width: 1585px;
-  height: 642px;
-  z-index: -1;
+const ImageBoxPhone = styled.div`
+  display: none;
 
-  background-color: ${({ theme }) => theme.color.white};
+  @media only screen and (max-width: 500px) {
+    display: block;
+  }
+`;
+
+const ImageBoxDesktopLarge = styled.div`
+  display: none;
+
+  @media only screen and (min-width: 1920px) {
+    display: block;
+    position: absolute;
+    top: 72px;
+    left: 160px;
+    width: 1585px;
+    height: 642px;
+    z-index: -1;
+
+    background-color: ${({ theme }) => theme.color.white};
+  }
 `;
 
 const OwnOfficeSection = () => (
-  <Container name='own-office-section'>
+  <SectionOwnOfficeWrapper name='own-office-section'>
     <Title>
       Lorem ipsum
       <br />
@@ -167,14 +202,21 @@ const OwnOfficeSection = () => (
         </g>
       </svg>
     </Bars>
-    <ImageBox>
+    <ImageBoxPhone>
+      <StaticImage
+        src='../../../assets/images/own-office-2.jpg'
+        alt='office look small'
+        placeholder='blurred'
+      />
+    </ImageBoxPhone>
+    <ImageBoxDesktopLarge>
       <StaticImage
         src='../../../assets/images/own-office.png'
         alt='office look'
         placeholder='blurred'
       />
-    </ImageBox>
-  </Container>
+    </ImageBoxDesktopLarge>
+  </SectionOwnOfficeWrapper>
 );
 
 export default OwnOfficeSection;
