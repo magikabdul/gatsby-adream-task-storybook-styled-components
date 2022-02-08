@@ -10,6 +10,10 @@ const news = [
         src='../../../assets/images/post-image-1.png'
         alt='news image'
         placeholder='blurred'
+        style={{
+          width: '100%',
+          height: '100%',
+        }}
       />
     ),
     date: '01.01.2021',
@@ -21,6 +25,10 @@ const news = [
         src='../../../assets/images/post-image-2.png'
         alt='news image'
         placeholder='blurred'
+        style={{
+          width: '100%',
+          height: '100%',
+        }}
       />
     ),
     date: '01.01.2021',
@@ -32,6 +40,10 @@ const news = [
         src='../../../assets/images/post-image-3.png'
         alt='news image'
         placeholder='blurred'
+        style={{
+          width: '100%',
+          height: '100%',
+        }}
       />
     ),
     date: '01.01.2021',
@@ -39,23 +51,36 @@ const news = [
   },
 ];
 
-const Container = styled.div`
-  margin-top: 991px;
+const SectionNewsWrapper = styled.section`
+  margin: 48px auto 0;
+  
+  @media only screen and (min-width: 1920px) {
+    margin-top: 991px;
+  }
 `;
 
 const Title = styled.h1`
   text-align: center;
+  font-size: ${({ theme }) => theme.font.size.m};
+
+  @media only screen and (min-width: 1920px) {
+    font-size: ${({ theme }) => theme.font.size.xl};
+  }
 `;
 
 const NewsBox = styled.div`
-  margin: 103px 175px 0;
   display: grid;
-  grid-gap: 110px;
-  grid-template-columns: repeat(3, 1fr);
+  margin: 48px auto 0;
+
+  @media only screen and (min-width: 1920px) {
+    margin: 103px 175px 0;
+    grid-gap: 110px;
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 const NewsSection = () => (
-  <Container>
+  <SectionNewsWrapper>
     <Title>Aktualności</Title>
     <NewsBox>
       {news.map((n, i) => (
@@ -67,7 +92,7 @@ const NewsSection = () => (
         />
       ))}
     </NewsBox>
-  </Container>
+  </SectionNewsWrapper>
 );
 
 export default NewsSection;
