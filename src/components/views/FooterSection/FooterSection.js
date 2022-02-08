@@ -15,74 +15,108 @@ const linksColumnTwo = [
   { name: 'Kontakt', to: 'footer-section' },
 ];
 
-const Container = styled.div`
-  margin-top: 170px;
-  padding: 0 173px;
-  height: 548px;
-
+const FooterWrapper = styled.footer`
   color: ${({ theme }) => theme.color.white};
   background-color: ${({ theme }) => theme.color.black};
-
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
   gap: 30px;
+  margin-top: 48px;
+  padding: 24px;
+
+  @media only screen and (min-width: 1920px) {
+    margin-top: 170px;
+    padding: 0 173px;
+    height: 548px;
+    grid-template-columns: repeat(5, 1fr);
+  }
 `;
 
 const FirstColumn = styled.div`
-  margin-top: 78px;
-
   & p {
-    font-size: 16px;
     color: inherit;
+    font-size: 16px;
   }
 
   & > p:first-child {
-    font-size: 65px;
-    font-weight: bold;
+    display: none;
   }
 
-  & > p:nth-child(2) {
-    margin: 34px 0 0 3px;
-    line-height: 26px;
-  }
+  @media only screen and (min-width: 1920px) {
+    margin-top: 78px;
 
-  & > p:last-child {
-    margin: 139px 0 0 3px;
-    font-size: 12px;
-    line-height: 28px;
-  }
-`;
+    & > p:first-child {
+      display: block;
+      font-size: 65px;
+      font-weight: bold;
+    }
 
-const LinksColumn = styled.div`
-  margin-top: 200px;
+    & > p:nth-child(2) {
+      margin: 34px 0 0 3px;
+      line-height: 26px;
+    }
 
-  & p {
-    margin: 11px 0;
-    font-size: 16px;
-    line-height: 28px;
-    color: inherit;
-    cursor: pointer;
-  }
-`;
-
-const FourthColumn = styled.div`
-  & > div:last-child {
-    margin-top: 408px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
-    > p {
-      padding: 3px 10px 0 0;
-      color: inherit;
+    & > p:last-child {
+      margin: 139px 0 0 3px;
       font-size: 12px;
       line-height: 28px;
     }
   }
 `;
 
+const LinksColumn = styled.div`
+  display: none;
+
+  @media only screen and (min-width: 1920px) {
+    display: block;
+    margin-top: 200px;
+
+    & p {
+      margin: 11px 0;
+      font-size: 16px;
+      line-height: 28px;
+      color: inherit;
+      cursor: pointer;
+    }
+  }
+`;
+
+const FourthColumn = styled.div`
+  & div:first-child {
+    display: none;
+  }
+
+  & > div:last-child {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+    > p {
+      padding: 3px 10px 0 0;
+      line-height: 28px;
+      color: inherit;
+      font-size: 12px;
+      display: block;
+    }
+  }
+  
+  @media only screen and (min-width: 1920px) {
+    & div:first-child {
+      display: block;
+    }
+    
+    & > div:last-child {
+      margin-top: 408px;
+
+      > p {
+        padding: 3px 10px 0 0;
+        line-height: 28px;
+      }
+    }
+  }
+`;
+
 const FooterSection = () => (
-  <Container name='footer-section'>
+  <FooterWrapper name='footer-section'>
     <FirstColumn>
       <p>LOGO</p>
       <p>
@@ -112,11 +146,13 @@ const FooterSection = () => (
       ))}
     </LinksColumn>
     <FourthColumn>
-      <StaticImage
-        src='../../../assets/images/footer/footer-bars.png'
-        alt='bars'
-        style={{ transform: 'translateY(-30px)' }}
-      />
+      <div>
+        <StaticImage
+          src='../../../assets/images/footer/footer-bars.png'
+          alt='bars'
+          style={{ transform: 'translateY(-30px)' }}
+        />
+      </div>
       <div>
         <p>Proudly designed by</p>
         <StaticImage
@@ -126,7 +162,7 @@ const FooterSection = () => (
         />
       </div>
     </FourthColumn>
-  </Container>
+  </FooterWrapper>
 );
 
 export default FooterSection;
