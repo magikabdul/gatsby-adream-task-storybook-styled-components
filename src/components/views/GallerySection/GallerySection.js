@@ -16,7 +16,6 @@ const SectionGalleryWrapper = styled.section`
 `;
 
 const Slider = styled.div`
-
   @media only screen and (min-width: 1920px) {
     position: absolute;
     width: 100%;
@@ -124,7 +123,7 @@ const GalleryRow1 = styled.div`
 const GalleryRow2 = styled.div`
   display: grid;
   row-gap: 20px;
-  
+
   @media only screen and (min-width: 1920px) {
     grid-template-columns: 800px 436px;
     column-gap: 30px;
@@ -134,7 +133,7 @@ const GalleryRow2 = styled.div`
 const ImageBox = styled.div`
   width: 90%;
   margin: 0 auto;
-  
+
   @media only screen and (min-width: 1920px) {
     width: 100%;
     height: 100%;

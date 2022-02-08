@@ -4,11 +4,10 @@ import theme from 'src/theme/theme';
 import GlobalStyles from 'src/theme/GlobalStyles';
 
 const Container = styled.div`
-  width: 1920px;
   margin: 0 auto;
 
-  @media only screen and (max-width: 500px) {
-    width: unset;
+  @media only screen and (min-width: 1920px) {
+    width: 1920px;
   }
 `;
 

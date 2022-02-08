@@ -10,23 +10,23 @@ const officeData = [
   { title: 'Biuro lorem ipsum\nLorem', info: 'od 100 zł/h', variant: 'small' },
 ];
 
-const Container = styled.div`
-  margin: 140px 175px 0;
+const SectionOfferWrapper = styled.section`
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-gap: 28px;
+  margin: 16px auto;
 
-  @media only screen and (max-width: 500px) {
-    margin: 16px auto;
-    grid-template-columns: 1fr;
+  @media only screen and (min-width: 1920px) {
+    margin: 140px 175px 0;
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
 
 const OfferSection = () => {
   const data = useStaticQuery(query);
   const nodes = data.allFile.nodes;
+
   return (
-    <Container name='offer-section'>
+    <SectionOfferWrapper name='offer-section'>
       {nodes.map((node, i) => (
         <Card
           key={i}
@@ -36,7 +36,7 @@ const OfferSection = () => {
           image={node.childrenImageSharp[0].gatsbyImageData}
         />
       ))}
-    </Container>
+    </SectionOfferWrapper>
   );
 };
 
