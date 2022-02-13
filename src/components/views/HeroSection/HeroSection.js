@@ -38,7 +38,7 @@ const ContainerPhones = styled.div`
 const ContainerTablets = styled.div`
   display: none;
 
-  @media only screen and (min-width: 720px) and (max-width: 1200px) {
+  @media only screen and (min-width: 720px) and (max-width: 1199px) {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -48,7 +48,7 @@ const ContainerTablets = styled.div`
 const ContainerDesktopSmall = styled.div`
   display: none;
 
-  @media only screen and (min-width: 1200px) and (max-width: 1920px) {
+  @media only screen and (min-width: 1200px) and (max-width: 1919px) {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -69,7 +69,7 @@ const Title = styled.div`
   font-size: ${({ theme }) => theme.font.size.m};
   text-align: center;
 
-  @media only screen and (min-width: 1200px) and (max-width: 1920px) {
+  @media only screen and (min-width: 1200px) and (max-width: 1919px) {
     font-size: ${({ theme }) => theme.font.size.l};
     font-weight: bold;
     text-align: left;
@@ -90,7 +90,7 @@ const Message = styled.div`
     text-align: left;
   }
   
-  @media only screen and (min-width: 1200px) and (max-width: 1920px) {
+  @media only screen and (min-width: 1200px) and (max-width: 1919px) {
     font-size: ${({ theme }) => theme.font.size.m};
   }
 
