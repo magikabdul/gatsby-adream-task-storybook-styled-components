@@ -6,12 +6,12 @@ import Pagination from 'src/components/organisms/Pagination/Pagination';
 import { StaticImage } from 'gatsby-plugin-image';
 import {
   BoxDesktopLarge,
-  BoxPhone,
+  BoxPhone, BoxTablets,
   ContactFormBoxDesktopLarge,
-  ContactFormBoxPhone,
+  ContactFormBoxPhone, ContactFormBoxTablets,
   ControlBoxDesktopLarge,
   DescriptionBoxDesktopLarge,
-  DescriptionBoxPhone,
+  DescriptionBoxPhone, DescriptionBoxTablets,
   ImageBoxDesktopLarge,
   NaviLeftDesktopLarge,
   NaviRightDesktopLarge,
@@ -26,7 +26,7 @@ const SectionHeroWrapper = styled.section``;
 const ContainerPhones = styled.div`
   display: none;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 720px) {
     display: flex;
     flex-direction: column;
   }
@@ -35,7 +35,8 @@ const ContainerPhones = styled.div`
 const ContainerTablets = styled.div`
   display: none;
 
-  @media only screen and (min-width: 500px) and (max-width: 1200px) {
+  @media only screen and (min-width: 720px) and (max-width: 1200px) {
+    position: relative;
     display: flex;
     flex-direction: column;
   }
@@ -73,10 +74,13 @@ const Title = styled.div`
 const Message = styled.div`
   font-size: ${({ theme }) => theme.font.size.s};
   text-align: center;
+  
+  @media only screen and (min-width: 500px) {
+    text-align: left;
+  }
 
   @media only screen and (min-width: 1920px) {
     font-size: ${({ theme }) => theme.font.size.l};
-    text-align: left;
     margin-top: 5px;
     line-height: 72px;
   }
@@ -131,7 +135,23 @@ const HeroSection = () => {
         </ContactFormBoxPhone>
       </ContainerPhones>
 
-      <ContainerTablets></ContainerTablets>
+      <ContainerTablets>
+        <StaticImage
+          style={{ filter: 'brightness(50%)' }}
+          src='../../../assets/images/hero-image-2.png'
+          alt='our office image'
+          placeholder='blurred'
+        />
+        <BoxTablets>
+          <DescriptionBoxTablets>
+            <Title>Firma</Title>
+            <Message>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor</Message>
+          </DescriptionBoxTablets>
+          <ContactFormBoxTablets>
+            <ContactForm />
+          </ContactFormBoxTablets>
+        </BoxTablets>
+      </ContainerTablets>
 
       <ContainerDesktopSmall></ContainerDesktopSmall>
 

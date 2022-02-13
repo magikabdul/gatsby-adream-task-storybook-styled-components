@@ -67,6 +67,21 @@ const SectionLocationWrapper = styled.section`
     grid-column-start: 1;
     grid-column-end: 3;
   }
+  
+  @media only screen and (min-width: 800px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: unset;
+
+    & div:nth-child(8) {
+      grid-column-start: unset;
+      grid-column-end: unset;
+    }
+
+    div:last-child {
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
+  }
 
   @media only screen and (min-width: 1920px) {
     margin: 140px 175px 0;

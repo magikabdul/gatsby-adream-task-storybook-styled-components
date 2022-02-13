@@ -9,6 +9,10 @@ const Container = styled.div`
   width: 90%;
   position: relative;
 
+  @media only screen and (min-width: 500px) {
+    width: 100%;
+  }
+  
   @media only screen and (min-width: 1920px) {
     margin: unset;
     width: 770px;

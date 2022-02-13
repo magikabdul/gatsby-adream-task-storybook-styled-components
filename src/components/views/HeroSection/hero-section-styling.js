@@ -84,3 +84,31 @@ export const ContactFormBoxPhone = styled.div`
   display: flex;
   justify-content: center;
 `;
+
+//TABLETS
+export const BoxTablets = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  height: 100%;
+`;
+
+export const DescriptionBoxTablets = styled.div`
+  color: ${({ theme }) => theme.color.white};
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0 32px 32px;
+`;
+
+export const ContactFormBoxTablets = styled.div`
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+`;
