@@ -11,6 +11,11 @@ const Input = styled.input`
   font-family: 'Poppins', sans-serif;
 
   width: 100%;
+
+  @media only screen and (min-width: 500px) and (max-width: 1200px) {
+    font-size: ${({ theme }) => theme.font.size.xs};
+    padding: 8px 16px;
+  }
 `;
 
 const InputField = ({ placeholder }) => (

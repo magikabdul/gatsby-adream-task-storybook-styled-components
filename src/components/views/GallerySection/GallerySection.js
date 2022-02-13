@@ -77,11 +77,24 @@ const Line = styled.div`
   }
 `;
 
+const GalleryWrapperFlex = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  
+  @media only screen and (min-width: 1920px) {
+    display: none;
+  }
+`;
+
 const GalleryWrapper = styled.div`
-  display: grid;
-  row-gap: 20px;
+  display: none;
 
   @media only screen and (min-width: 1920px) {
+    display: grid;
+    row-gap: 20px;
     transform: translate(0, -118px);
     column-gap: 30px;
     grid-template-columns: 625px 770px 1266px;
@@ -134,6 +147,14 @@ const ImageBox = styled.div`
   width: 90%;
   margin: 0 auto;
 
+  @media only screen and (min-width: 700px) {
+    width: 45%;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    width: 30%;
+  }
+
   @media only screen and (min-width: 1920px) {
     width: 100%;
     height: 100%;
@@ -163,6 +184,54 @@ const GallerySection = () => {
       <Slider galleryShift={galleryShift}>
         <Title>Galeria</Title>
         <Line />
+        <GalleryWrapperFlex>
+          <ImageBox>
+            <StaticImage
+              src='../../../assets/images/gallery/gallery-1.png'
+              alt='office image'
+              objectPosition='23% 0'
+              style={{ height: '100%' }}
+              placeholder='blurred'
+            />
+          </ImageBox>
+          <ImageBox>
+            <StaticImage
+              src='../../../assets/images/gallery/gallery-2.png'
+              alt='office image'
+              placeholder='blurred'
+            />
+          </ImageBox>
+          <ImageBox>
+            <StaticImage
+              src='../../../assets/images/gallery/gallery-3.png'
+              alt='office image'
+              placeholder='blurred'
+            />
+          </ImageBox>
+          <ImageBox>
+            <StaticImage
+              src='../../../assets/images/gallery/gallery-4.png'
+              alt='office image'
+              placeholder='blurred'
+            />
+          </ImageBox>
+          <ImageBox>
+            <StaticImage
+              src='../../../assets/images/gallery/gallery-5.png'
+              alt='office image'
+              placeholder='blurred'
+            />
+          </ImageBox>
+          <ImageBox>
+            <StaticImage
+              src='../../../assets/images/gallery/gallery-6.png'
+              alt='office image'
+              objectPosition='0 0'
+              style={{ height: '100%' }}
+              placeholder='blurred'
+            />
+          </ImageBox>
+        </GalleryWrapperFlex>
         <GalleryWrapper>
           <GalleryColumn1>
             <ImageBox>

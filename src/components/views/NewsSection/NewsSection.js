@@ -72,10 +72,17 @@ const NewsBox = styled.div`
   display: grid;
   margin: 48px auto 0;
 
+  @media only screen and (min-width: 500px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (min-width: 1000px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
   @media only screen and (min-width: 1920px) {
     margin: 103px 175px 0;
     grid-gap: 110px;
-    grid-template-columns: repeat(3, 1fr);
   }
 `;
 

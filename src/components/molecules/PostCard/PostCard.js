@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   margin: 0 auto 32px;
   width: 90%;
+  place-self: center;
 
   @media only screen and (min-width: 1920px) {
     width: 450px;

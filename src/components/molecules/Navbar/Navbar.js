@@ -118,7 +118,7 @@ const ContainerMobile = styled.div`
   color: ${({ theme }) => theme.color.white};
   z-index: 10;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 800px) {
     display: flex;
     position: sticky;
     top: 0;
@@ -196,7 +196,7 @@ const MobileMenu = styled.div`
     text-align: right;
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 800px) {
     display: flex;
     width: 100%;
   }

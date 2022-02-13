@@ -15,9 +15,17 @@ const SectionOfferWrapper = styled.section`
   grid-gap: 28px;
   margin: 16px auto;
 
+  @media only screen and (min-width: 700px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 8px;
+    padding: 16px;
+  }
+
   @media only screen and (min-width: 1920px) {
+    padding: unset;
     margin: 140px 175px 0;
     grid-template-columns: repeat(2, 1fr);
+    grid-gap: 28px;
   }
 `;
 
