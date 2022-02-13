@@ -23,11 +23,14 @@ const FooterWrapper = styled.footer`
   margin-top: 48px;
   padding: 24px;
 
+  @media only screen and (min-width: 1200px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
   @media only screen and (min-width: 1920px) {
     margin-top: 170px;
     padding: 0 173px;
     height: 548px;
-    grid-template-columns: repeat(5, 1fr);
   }
 `;
 
@@ -39,6 +42,26 @@ const FirstColumn = styled.div`
 
   & > p:first-child {
     display: none;
+  }
+
+  @media only screen and (min-width: 1200px) {
+
+    & > p:first-child {
+      display: block;
+      font-size: 65px;
+      font-weight: bold;
+    }
+
+    & > p:nth-child(2) {
+      margin: 34px 0 0 3px;
+      line-height: 26px;
+    }
+
+    & > p:last-child {
+      margin: 139px 0 0 3px;
+      font-size: 12px;
+      line-height: 28px;
+    }
   }
 
   @media only screen and (min-width: 1920px) {
@@ -65,6 +88,19 @@ const FirstColumn = styled.div`
 
 const LinksColumn = styled.div`
   display: none;
+
+  @media only screen and (min-width: 1200px) {
+    display: block;
+    margin-top: 200px;
+
+    & p {
+      margin: 11px 0;
+      font-size: 16px;
+      line-height: 28px;
+      color: inherit;
+      cursor: pointer;
+    }
+  }
 
   @media only screen and (min-width: 1920px) {
     display: block;
@@ -96,6 +132,21 @@ const FourthColumn = styled.div`
       color: inherit;
       font-size: 12px;
       display: block;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    & div:first-child {
+      display: none;
+    }
+
+    & > div:last-child {
+      margin-top: 408px;
+
+      > p {
+        padding: 3px 10px 0 0;
+        line-height: 28px;
+      }
     }
   }
   

@@ -6,12 +6,15 @@ import Pagination from 'src/components/organisms/Pagination/Pagination';
 import { StaticImage } from 'gatsby-plugin-image';
 import {
   BoxDesktopLarge,
-  BoxPhone, BoxTablets,
-  ContactFormBoxDesktopLarge,
-  ContactFormBoxPhone, ContactFormBoxTablets,
+  BoxPhone,
+  BoxTablets,
+  ContactFormBoxDesktopLarge, ContactFormBoxDesktopSmall,
+  ContactFormBoxPhone,
+  ContactFormBoxTablets,
   ControlBoxDesktopLarge,
-  DescriptionBoxDesktopLarge,
-  DescriptionBoxPhone, DescriptionBoxTablets,
+  DescriptionBoxDesktopLarge, DescriptionBoxDesktopSmall,
+  DescriptionBoxPhone,
+  DescriptionBoxTablets,
   ImageBoxDesktopLarge,
   NaviLeftDesktopLarge,
   NaviRightDesktopLarge,
@@ -48,6 +51,8 @@ const ContainerDesktopSmall = styled.div`
   @media only screen and (min-width: 1200px) and (max-width: 1920px) {
     display: flex;
     flex-direction: column;
+    position: relative;
+    height: 650px;
   }
 `;
 
@@ -64,6 +69,12 @@ const Title = styled.div`
   font-size: ${({ theme }) => theme.font.size.m};
   text-align: center;
 
+  @media only screen and (min-width: 1200px) and (max-width: 1920px) {
+    font-size: ${({ theme }) => theme.font.size.l};
+    font-weight: bold;
+    text-align: left;
+  }
+
   @media only screen and (min-width: 1920px) {
     font-size: ${({ theme }) => theme.font.size.xl};
     text-align: left;
@@ -74,9 +85,13 @@ const Title = styled.div`
 const Message = styled.div`
   font-size: ${({ theme }) => theme.font.size.s};
   text-align: center;
-  
+
   @media only screen and (min-width: 500px) {
     text-align: left;
+  }
+  
+  @media only screen and (min-width: 1200px) and (max-width: 1920px) {
+    font-size: ${({ theme }) => theme.font.size.m};
   }
 
   @media only screen and (min-width: 1920px) {
@@ -145,7 +160,9 @@ const HeroSection = () => {
         <BoxTablets>
           <DescriptionBoxTablets>
             <Title>Firma</Title>
-            <Message>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor</Message>
+            <Message>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor
+            </Message>
           </DescriptionBoxTablets>
           <ContactFormBoxTablets>
             <ContactForm />
@@ -153,7 +170,38 @@ const HeroSection = () => {
         </BoxTablets>
       </ContainerTablets>
 
-      <ContainerDesktopSmall></ContainerDesktopSmall>
+      <ContainerDesktopSmall>
+        <SliderDesktopLarge>
+          <ImageBoxDesktopLarge imageNumber={imageNumber}>
+            <StaticImage
+              src='../../../assets/images/hero-image-1.png'
+              alt='our office image'
+              placeholder='blurred'
+            />
+            <StaticImage
+              src='../../../assets/images/hero-image-2.png'
+              alt='our office image'
+              placeholder='blurred'
+            />
+            <StaticImage
+              src='../../../assets/images/hero-image-3.png'
+              alt='our office image'
+              placeholder='blurred'
+            />
+          </ImageBoxDesktopLarge>
+          <DescriptionBoxDesktopSmall>
+            <Title>Firma</Title>
+            <Message>
+              Lorem ipsum dolor sit amet,
+              <br />
+              consectetur adipiscing elit. Ut auctor
+            </Message>
+          </DescriptionBoxDesktopSmall>
+          <ContactFormBoxDesktopSmall>
+            <ContactForm />
+          </ContactFormBoxDesktopSmall>
+        </SliderDesktopLarge>
+      </ContainerDesktopSmall>
 
       <ContainerDesktopLarge>
         <BoxDesktopLarge>

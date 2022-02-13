@@ -118,7 +118,7 @@ const ContainerMobile = styled.div`
   color: ${({ theme }) => theme.color.white};
   z-index: 10;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1920px) {
     display: flex;
     position: sticky;
     top: 0;
@@ -127,6 +127,26 @@ const ContainerMobile = styled.div`
 
     background-color: black;
     box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+  }
+`;
+
+const BlackMenuButton = styled.button`
+  display: none;
+
+  @media only screen and (min-width: 800px) and (max-width: 1920px) {
+    display: inline-block;
+    color: ${({ theme }) => theme.color.white};
+    background-color: transparent;
+    padding: 8px 16px;
+    margin: 0 8px;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: ${({ theme }) => theme.color.input};
+    }
   }
 `;
 
@@ -141,6 +161,10 @@ const BurgerButton = styled.button`
   justify-content: space-around;
   cursor: pointer;
   transform-origin: right;
+
+  @media only screen and (min-width: 800px) and (max-width: 1920px) {
+    display: none;
+  }
 
   & span {
     display: block;
@@ -232,6 +256,11 @@ const Navbar = () => {
 
       <ContainerMobile>
         <Logo style={{ flexGrow: 1 }}>LOGO</Logo>
+        {buttons.map(b => (
+          <Link key={b.label} to={b.to} smooth duration={1000} offset={-100}>
+            <BlackMenuButton>{b.label}</BlackMenuButton>
+          </Link>
+        ))}
         <BurgerButton
           showMenu={showMenu}
           onClick={() => setShowMenu(!showMenu)}

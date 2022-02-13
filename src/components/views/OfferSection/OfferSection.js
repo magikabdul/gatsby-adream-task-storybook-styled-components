@@ -19,6 +19,7 @@ const SectionOfferWrapper = styled.section`
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 8px;
     padding: 16px;
+    justify-content: center;
   }
 
   @media only screen and (min-width: 1920px) {

@@ -202,6 +202,7 @@ const OwnOfficeSection = () => (
     </Bars>
     <ImageBoxPhone>
       <StaticImage
+        style={{ margin: '0 auto', display: 'block' }}
         src='../../../assets/images/own-office-2.jpg'
         alt='office look small'
         placeholder='blurred'

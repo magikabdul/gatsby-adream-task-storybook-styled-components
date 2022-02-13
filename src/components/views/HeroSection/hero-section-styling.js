@@ -112,3 +112,17 @@ export const ContactFormBoxTablets = styled.div`
   align-items: center;
   height: 100%;
 `;
+
+//DESKTOP SMALL
+export const DescriptionBoxDesktopSmall = styled.div`
+  position: absolute;
+  top: 300px;
+  left: 50px;
+  color: ${({ theme }) => theme.color.white};
+`;
+
+export const ContactFormBoxDesktopSmall = styled.div`
+  position: absolute;
+  bottom: 6px;
+  right: 50px;
+`;

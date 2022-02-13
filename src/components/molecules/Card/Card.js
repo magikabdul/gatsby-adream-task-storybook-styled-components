@@ -9,8 +9,12 @@ const Container = styled.div`
   width: 90%;
   position: relative;
 
-  @media only screen and (min-width: 500px) {
+  @media only screen and (min-width: 500px) and (max-width: 1200px) {
     width: 100%;
+  }
+
+  @media only screen and (min-width: 1200px) and (max-width: 1920px) {
+    width: unset;
   }
   
   @media only screen and (min-width: 1920px) {
@@ -20,19 +24,19 @@ const Container = styled.div`
   }
 
   & > div img {
-    @media only screen and (min-width: 1920px) {
+    @media only screen and (min-width: 1200px) {
       transition: transform 0.3s ease-in-out !important;
     }
   }
 
   &:hover > div img {
-    @media only screen and (min-width: 1920px) {
+    @media only screen and (min-width: 1200px) {
       transform: scale(1.2);
     }
   }
 
   &:hover > div:last-child {
-    @media only screen and (min-width: 1920px) {
+    @media only screen and (min-width: 1200px) {
       & div:last-child {
         &:after {
           width: 100%;
@@ -74,7 +78,7 @@ const YellowSquare = styled.div`
   width: 24px;
   height: 24px;
 
-  @media only screen and (min-width: 1920px) {
+  @media only screen and (min-width: 1200px) {
     width: 42px;
     height: 42px;
   }
@@ -83,6 +87,10 @@ const YellowSquare = styled.div`
 const Title = styled.h3`
   margin: -18px 0 0 10px;
   font-size: ${({ theme }) => theme.font.size.xs};
+
+  @media only screen and (min-width: 1200px) and (max-width: 1920px) {
+    font-size: ${({ theme }) => theme.font.size.m};
+  }
 
   @media only screen and (min-width: 1920px) {
     margin: -35px 0 0 10px;
@@ -108,7 +116,7 @@ const Info = styled.div`
   font-size: ${({ theme }) => theme.font.size.xs};
   margin: 7px 0 0 10px;
 
-  @media only screen and (min-width: 1920px) {
+  @media only screen and (min-width: 1200px) {
     font-size: ${({ theme }) => theme.font.size.s};
   }
 `;
