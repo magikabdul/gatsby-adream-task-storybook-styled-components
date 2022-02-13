@@ -10,7 +10,7 @@ const Container = styled.div`
   padding: 28px 33px 33px;
   background-color: ${({ theme }) => theme.color.white};
 
-  @media only screen and (min-width: 500px) and (max-width: 800px) {
+  @media only screen and (min-width: 500px) and (max-width: 799px) {
     width: 100%;
     min-height: unset;
     padding: 16px;

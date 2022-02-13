@@ -118,7 +118,7 @@ const ContainerMobile = styled.div`
   color: ${({ theme }) => theme.color.white};
   z-index: 10;
 
-  @media only screen and (max-width: 1920px) {
+  @media only screen and (max-width: 1919px) {
     display: flex;
     position: sticky;
     top: 0;
@@ -133,7 +133,7 @@ const ContainerMobile = styled.div`
 const BlackMenuButton = styled.button`
   display: none;
 
-  @media only screen and (min-width: 800px) and (max-width: 1920px) {
+  @media only screen and (min-width: 800px) and (max-width: 1919px) {
     display: inline-block;
     color: ${({ theme }) => theme.color.white};
     background-color: transparent;
@@ -162,7 +162,7 @@ const BurgerButton = styled.button`
   cursor: pointer;
   transform-origin: right;
 
-  @media only screen and (min-width: 800px) and (max-width: 1920px) {
+  @media only screen and (min-width: 800px) and (max-width: 1919px) {
     display: none;
   }
 

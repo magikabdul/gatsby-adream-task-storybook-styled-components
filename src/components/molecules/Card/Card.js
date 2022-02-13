@@ -9,11 +9,11 @@ const Container = styled.div`
   width: 90%;
   position: relative;
 
-  @media only screen and (min-width: 500px) and (max-width: 1200px) {
+  @media only screen and (min-width: 500px) and (max-width: 1199px) {
     width: 100%;
   }
 
-  @media only screen and (min-width: 1200px) and (max-width: 1920px) {
+  @media only screen and (min-width: 1200px) and (max-width: 1919px) {
     width: unset;
   }
   
@@ -88,7 +88,7 @@ const Title = styled.h3`
   margin: -18px 0 0 10px;
   font-size: ${({ theme }) => theme.font.size.xs};
 
-  @media only screen and (min-width: 1200px) and (max-width: 1920px) {
+  @media only screen and (min-width: 1200px) and (max-width: 1919px) {
     font-size: ${({ theme }) => theme.font.size.m};
   }
 
