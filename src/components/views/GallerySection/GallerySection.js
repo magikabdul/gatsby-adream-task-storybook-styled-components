@@ -153,13 +153,6 @@ const ImageBox = styled.div`
 
   @media only screen and (min-width: 1200px) {
     width: 30%;
-  }
-
-  @media only screen and (min-width: 1920px) {
-    width: 100%;
-    height: 100%;
-    margin: unset;
-    overflow: hidden;
 
     & > div img {
       transition: transform 0.3s ease-in-out !important;
@@ -168,6 +161,15 @@ const ImageBox = styled.div`
     &:hover > div img {
       transform: scale(1.2);
     }
+  }
+
+  @media only screen and (min-width: 1920px) {
+    width: 100%;
+    height: 100%;
+    margin: unset;
+    overflow: hidden;
+
+    
   }
 `;
 

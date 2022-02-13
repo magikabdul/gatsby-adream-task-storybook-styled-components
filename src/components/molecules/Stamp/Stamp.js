@@ -44,6 +44,10 @@ const Label = styled.div`
   width: 80%;
   margin: 10px auto 0;
 
+  @media only screen and (min-width: 1200px) {
+    font-size: ${({ theme }) => theme.font.size.s};
+  }
+
   @media only screen and (min-width: 1920px) {
     text-align: left;
     margin-top: ${({ variant }) => (variant === 'high' ? '45px' : '36px')};
